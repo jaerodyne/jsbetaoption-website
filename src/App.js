@@ -4,7 +4,7 @@ import './index.css';
 
 import Home from './components/Home';
 import Bio from './components/Bio';
-import SampleTracks from './components/SampleTracks';
+import Epk from './components/Epk';
 
 class App extends Component {
   render() {
@@ -14,7 +14,7 @@ class App extends Component {
 	  	  	<Switch>
 		        <Route exact path="/" component={Home}/>
 		        <Route exact path="/bio" component={Bio}/>
-		        <Route exact path="/sample-tracks" component={SampleTracks}/>
+		        <Route exact path="/epk" component={Epk}/>
 	  	  	</Switch>
 	      </div>
      </BrowserRouter>
