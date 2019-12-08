@@ -38,7 +38,6 @@ class Home extends Component {
 
 	render() {
 		const parallaxBkgd = {
-			// backgroundColor: 'white'
 			backgroundColor: '#4a2f3c',
 			opacity: '0.8'
 		}
@@ -58,7 +57,6 @@ class Home extends Component {
 									</Col>
 								</Row>
 
-								
 								<Row>
 									<Col sm="12">
 										<Parallax.Layer
