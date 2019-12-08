@@ -1,5 +1,5 @@
-import React, { useRef, useState } from 'react';
-import Script from 'react-load-script'
+import React, { useState } from 'react';
+import Script from 'react-load-script';
 import Parallax from 'react-springy-parallax';
 import { Row, Col } from 'reactstrap';
 
@@ -8,23 +8,16 @@ import VideoTeaserTitle from './VideoTeaserTitle';
 import Bio from './Bio';
 import Footer from './Footer';
 
-export default function DesktopLayout() {
+export default function DesktopLayout(props) {
   
   const [loadedState, setLoadedState] = useState(false)
   const toggleLoadedState = () => setLoadedState(!loadedState);
   
   const [errorState, setErrorState] = useState(false)
   const toggleErrorState = () => setErrorState(!errorState);
-  
-  const parallaxBkgd = {
-    backgroundColor: '#4a2f3c',
-    opacity: '0.8'
-  }
-  
-  const parallaxRef = useRef("parallax")
 
   return (
-    <Parallax ref={parallaxRef} pages={4}>
+    <Parallax ref={props.parallaxRef} pages={4}>
       <Row>
         <Col md="12">
           <Parallax.Layer offset={0.6} speed={0.6}>
@@ -45,6 +38,7 @@ export default function DesktopLayout() {
           </Parallax.Layer>
         </Col>	
       </Row>
+
       <Row>
         <Col sm="12 text-center">
           <Parallax.Layer
@@ -81,7 +75,7 @@ export default function DesktopLayout() {
 
       <Row>
         <Col sm="12">
-          <Parallax.Layer offset={1} speed={0.7} style={parallaxBkgd} />
+          <Parallax.Layer offset={1} speed={0.7} style={props.parallaxBkgd} />
         </Col>
       </Row>
       
