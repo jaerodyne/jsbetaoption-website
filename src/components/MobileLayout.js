@@ -1,14 +1,15 @@
 import React from 'react';
-import Parallax from 'react-springy-parallax';
+import { Parallax, ParallaxLayer } from 'react-spring/renderprops-addons'
 import { Row, Col } from 'reactstrap';
 
 import VideoTeaserTitle from './VideoTeaserTitle';
 import Bio from './Bio';
 import Footer from './Footer';
 
-export default function TabletLayout(props) {
+export default function MobileLayout(props) {
+  let parallax;
   return (
-    <Parallax ref={props.parallaxRef} pages={2} style={props.parallaxBkgd}>
+    <Parallax ref={parallax} pages={2} style={props.parallaxBkgd}>
       <Row>
         <Col xs="12" className="mobile-background">
           <VideoTeaserTitle/>

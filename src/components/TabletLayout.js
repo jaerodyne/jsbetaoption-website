@@ -1,5 +1,5 @@
 import React from 'react';
-import Parallax from 'react-springy-parallax';
+import { Parallax, ParallaxLayer } from 'react-spring/renderprops-addons';
 import { Row, Col } from 'reactstrap';
 
 import VideoTeaserTitle from './VideoTeaserTitle';
@@ -7,8 +7,9 @@ import Bio from './Bio';
 import Footer from './Footer';
 
 export default function TabletLayout(props) {
+  let parallax;
   return (
-    <Parallax ref={props.parallaxRef} pages={2} style={props.parallaxBkgd}>
+    <Parallax ref={parallax} pages={2} style={props.parallaxBkgd}>
       <Row>
         <Col md="12">
           <Parallax.Layer
@@ -52,7 +53,7 @@ export default function TabletLayout(props) {
           <Parallax.Layer
             offset={1}
             speed={3}
-            onClick={() => this.refs.parallax.scrollTo(0)}
+            onClick={() => parallax.scrollTo(0)}
           >
             <div className="bio-album-cover">
               <img src="../img/album-cover.jpg" alt=""/>

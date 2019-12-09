@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React from 'react';
 
 import Responsive from 'react-responsive';
 import DesktopLayout from './DesktopLayout';
@@ -15,20 +15,18 @@ const parallaxBkgd = {
 }
 
 export default function Home() {
-	const parallaxRef = useRef("parallax")
-
 	return (
 		<div>
 			<Desktop>
-				<DesktopLayout style={parallaxBkgd} parallaxRef={parallaxRef} />
+				<DesktopLayout style={parallaxBkgd} />
 			</Desktop>
 
 			<Tablet>
-				<TabletLayout style={parallaxBkgd} parallaxRef={parallaxRef} />
+				<TabletLayout style={parallaxBkgd} />
 			</Tablet>
 
 			<Mobile>
-				<MobileLayout style={parallaxBkgd} parallaxRef={parallaxRef} />
+				<MobileLayout style={parallaxBkgd} />
 			</Mobile>
 		</div>
 	)
